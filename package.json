@@ -18,6 +18,8 @@
     "Rick and Morty"
   ],
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "graphql": "^16.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

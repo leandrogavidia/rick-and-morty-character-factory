@@ -6,6 +6,7 @@ import { useQuery, gql } from '@apollo/client';
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
+import { AppProvider } from "../AppContext/AppContext";
 
 const ALL_CHARACTERS =  gql`
     query {
@@ -61,7 +62,7 @@ function App() {
   if (error) return <p>{error.message}</p>
     
   return (
-    <React.Fragment>
+    <AppProvider>
       <Theme>
         <Normalize />
         <GlobalStyles />
@@ -71,7 +72,7 @@ function App() {
         <Main />
         <Footer />    
       </Theme>
-    </React.Fragment>
+    </AppProvider>
   )
 }
 

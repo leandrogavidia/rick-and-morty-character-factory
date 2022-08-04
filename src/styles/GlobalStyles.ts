@@ -6,6 +6,24 @@ import orbitron600Woff2 from "../assets/fonts/orbitron-v25-latin-600.woff2";
 import orbitron800Woff from "../assets/fonts/orbitron-v25-latin-800.woff";
 import orbitron800Woff2 from "../assets/fonts/orbitron-v25-latin-800.woff2";
 
+interface ColorPalette {
+    primaryColor: string,
+    secondColor: string,
+    thirdColor: string,
+    fourthColor: string,
+
+    whiteColor: string,
+    blackColor: string
+}
+
+interface Theme {
+    colorPalette: ColorPalette
+}
+
+interface Props {
+    theme: Theme
+}
+
 const GlobalStyles = createGlobalStyle`
         @font-face {
             font-family: "Orbitron";
@@ -39,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
 
 
     :focus-visible {
-        outline: 0.1rem ${props => props.theme.colorPalette.secondColor} solid;
+        outline: 0.1rem ${(props: Props) => props.theme.colorPalette.secondColor} solid;
     }
     
     * {

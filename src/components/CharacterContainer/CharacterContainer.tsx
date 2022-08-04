@@ -10,6 +10,10 @@ const MainContainer = styled.div`
     border-radius: 1.2rem;
     overflow: hidden;
     margin-bottom: 4rem;
+
+    @media (min-width: 600px) {
+        margin-bottom: 0;
+    }
 `
 
 const CharacterImage = styled.img`
@@ -31,10 +35,17 @@ const CharacterTitle = styled.h1`
 const CharacterParagraph = styled.p`
     margin: 1.6rem 0;
     font-size: 1.6rem;
+    line-height: 1.5;
+    border-bottom: 0.1rem rgba(255, 255, 255, 0.2) solid;
+    padding-bottom: 1.2rem;
     strong {
         color: ${({theme}) => theme.colorPalette.secondColor};
     }
 `
+
+interface OriginAndLocation {
+    name: string
+}
 
 interface characterData {
     image: string,
@@ -42,10 +53,10 @@ interface characterData {
     id: number,
     status: string,
     species: string,
-    type: string,
+    type: string | undefined,
     gender: string,
-    origin: string,
-    location: string,
+    origin: OriginAndLocation,
+    location: OriginAndLocation,
     created: string
 }
 
@@ -64,8 +75,8 @@ const CharacterContainer = (props: characterData) => {
                     <CharacterParagraph><strong>Species:</strong> {props.species}</CharacterParagraph>
                     <CharacterParagraph><strong>Type:</strong> {props.type}</CharacterParagraph>
                     <CharacterParagraph><strong>Gender:</strong> {props.gender}</CharacterParagraph>
-                    <CharacterParagraph><strong>Origin:</strong> {props.origin}</CharacterParagraph>
-                    <CharacterParagraph><strong>Location:</strong> {props.location}</CharacterParagraph>
+                    <CharacterParagraph><strong>Origin:</strong> {props.origin.name}</CharacterParagraph>
+                    <CharacterParagraph><strong>Location:</strong> {props.location.name}</CharacterParagraph>
                     <CharacterParagraph><strong>Created at:</strong> {props.created}</CharacterParagraph>
                 </CharacterData>
             </MainContainer>

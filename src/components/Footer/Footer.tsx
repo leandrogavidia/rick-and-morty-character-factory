@@ -5,9 +5,6 @@ const FooterComponent = styled.footer`
     width: 100%;
     background-color: ${({ theme }) => theme.colorPalette.fourthColor};
     height: 4rem;
-    position: relativea;
-    bottom: 0;
-    margin-top: 6rem;
 
     div {
         width: inherit;
@@ -24,16 +21,44 @@ const FooterComponent = styled.footer`
             text-decoration: none;
             color: ${({ theme }) => theme.colorPalette.whiteColor};
             margin-left: 2rem;
-            transition: color 0.2s ease-in-out;
-
-            &:hover, &:visited {
+            transition: color 0.2s ease-in-out, filter 0.2s ease-in-out;
+            
+            &:hover {
                 color: ${({ theme }) => theme.colorPalette.primaryColor};
+                filter: drop-shadow(0 0 0.5rem ${({ theme }) => theme.colorPalette.primaryColor});
+            }
+
+            &:visited {
+                color: ${({ theme }) => theme.colorPalette.secondColor};
+            }
+        }
+    }
+
+    @media (min-width: 600px) {
+        height: 6rem;
+
+        div {
+            a {
+                font-size: 1.6rem;
+                margin-left: 4rem;
+            }
+        }
+    }
+
+    @media (min-width: 1000px) {
+        height: 8rem;
+
+        div {
+            a {
+                font-size: 2.4rem;
+                margin-left: 8rem;
             }
         }
     }
 `
 
 const Footer = () => {
+
     return (
         <FooterComponent>
             <div>

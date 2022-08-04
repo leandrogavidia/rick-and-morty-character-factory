@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../assets/images/rick-and-morty-logo.png"
+import logo from "../../assets/images/rick-and-morty-logo.png";
 
 const HeaderComponent = styled.header`
     width: 100%;

@@ -57,10 +57,7 @@ const AppProvider = ({ children }: {children: React.ReactNode}) => {
     const [getCharacter, result] = useLazyQuery(RANDOM_CHARACTER);
 
     const getRandomCharacter = (characterId: number) => {
-
         getCharacter({ variables: { characterNumber: characterId } })
-    
-        console.log(RANDOM_CHARACTER)
     }
 
     const changeMainCharacter = (newCharacter: characterData) => {
@@ -71,9 +68,6 @@ const AppProvider = ({ children }: {children: React.ReactNode}) => {
         if(result.data) {
             setCharacterList([...new Set([...characterList, result.data.charactersByIds[0]])])
             setMainCharacter(result.data.charactersByIds[0])
-
-            console.log(result.data.charactersByIds[0])
-            console.log(characterList)
         }
 
     }, [result])

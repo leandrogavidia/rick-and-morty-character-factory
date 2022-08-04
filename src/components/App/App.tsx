@@ -7,6 +7,29 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
 import { AppProvider } from "../AppContext/AppContext";
+import logo from "../../assets/images/rick-and-morty-logo.png";
+import styled from "styled-components";
+
+const Logo = styled.img`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 700px;
+`
+
+const Error = styled.p`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+`
 
 const ALL_CHARACTERS =  gql`
     query {
@@ -58,8 +81,8 @@ function App() {
     console.log(allCharacter)
   }, [])
   
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>{error.message}</p>
+  if (loading) return <Logo src={logo} title="Rick and Morty logo" alt="Rick and Morty logo" />
+  if (error) return <Error>{error.message}</Error>
     
   return (
     <AppProvider>

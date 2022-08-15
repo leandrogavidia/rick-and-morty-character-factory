@@ -707,7 +707,7 @@ this in the docs: http://dev.apollodata.com/core/fragments.html#unique-names`):a
         @media (min-width: 600px) {
             font-size: 2rem;
         }
-`,sk=({children:e})=>{const{showMenu:t,setShowMenu:r}=Le.useContext(vs);return Ce(ok,{view:t,children:[Ce(ak,{children:[$("p",{children:$("strong",{children:"All history"})}),$("button",{onClick:()=>r(!t),children:"Closed"})]}),e]})},lk=we.main`
+`,sk=({children:e})=>{const{showMenu:t,setShowMenu:r}=Le.useContext(vs);return Ce(ok,{view:t,children:[Ce(ak,{children:[$("p",{children:$("strong",{children:"All history"})}),$("button",{onClick:()=>r(!t),children:"Close"})]}),e]})},lk=we.main`
     width: 100%;
     margin: 4rem auto 4rem auto;
 
@@ -810,7 +810,7 @@ this in the docs: http://dev.apollodata.com/core/fragments.html#unique-names`):a
             font-size: 2rem;
         }
     }
-`,pk=()=>{const{characterList:e,mainCharacter:t,getRandomCharacter:r,setShowMenu:n,showMenu:i}=Le.useContext(vs);return $(lk,{children:$(uk,{children:e.length>0?Ce(Le.Fragment,{children:[$(ZE,{image:t?t.image:"",name:t?t.name:"",id:t?t.id:0,status:t?t.status:"",species:t?t.species:"",type:t?t.type:"",gender:t?t.gender:"",origin:t?t.origin:"",location:t?t.location:"",created:t?t.created:""}),Ce(ck,{children:[$(sl,{onClick:()=>r(Math.floor(Math.random()*200)),column:"left",children:"Generate character"}),$(sl,{onClick:()=>n(!i),children:"View all history"}),Ce(fk,{children:[$(ni,{image:e[e.length-1].image,name:e[e.length-1].name,character:e[e.length-1]}),e.length>1?$(ni,{image:e[e.length-2].image,name:e[e.length-2].name,character:e[e.length-2]}):null,e.length>2?$(ni,{image:e[e.length-3].image,name:e[e.length-3].name,character:e[e.length-3]}):null,e.length>3?$(ni,{image:e[e.length-4].image,name:e[e.length-4].name,character:e[e.length-4]}):null]})]}),$(sk,{children:e.map(o=>$(ni,{image:o.image,name:o.name,character:o},o.id)).reverse()})]}):Ce(dk,{children:[$(sl,{onClick:()=>r(Math.floor(Math.random()*826)),children:"Generate my first character"}),$("h2",{children:"There are no characters generated, generate your first character."})]})})})},hk=we.footer`
+`,pk=()=>{const{characterList:e,mainCharacter:t,getRandomCharacter:r,setShowMenu:n,showMenu:i}=Le.useContext(vs);return $(lk,{children:$(uk,{children:e.length>0?Ce(Le.Fragment,{children:[$(ZE,{image:t?t.image:"",name:t?t.name:"",id:t?t.id:0,status:t?t.status:"",species:t?t.species:"",type:t?t.type:"",gender:t?t.gender:"",origin:t?t.origin:"",location:t?t.location:"",created:t?t.created:""}),Ce(ck,{children:[$(sl,{onClick:()=>r(Math.floor(Math.random()*826)),column:"left",children:"Generate character"}),$(sl,{onClick:()=>n(!i),children:"View all history"}),Ce(fk,{children:[$(ni,{image:e[e.length-1].image,name:e[e.length-1].name,character:e[e.length-1]}),e.length>1?$(ni,{image:e[e.length-2].image,name:e[e.length-2].name,character:e[e.length-2]}):null,e.length>2?$(ni,{image:e[e.length-3].image,name:e[e.length-3].name,character:e[e.length-3]}):null,e.length>3?$(ni,{image:e[e.length-4].image,name:e[e.length-4].name,character:e[e.length-4]}):null]})]}),$(sk,{children:e.map(o=>$(ni,{image:o.image,name:o.name,character:o},o.id)).reverse()})]}):Ce(dk,{children:[$(sl,{onClick:()=>r(Math.floor(Math.random()*826)),children:"Generate my first character"}),$("h2",{children:"There are no characters generated, generate your first character."})]})})})},hk=we.footer`
     width: 100%;
     background-color: ${({theme:e})=>e.colorPalette.fourthColor};
     height: 4rem;
